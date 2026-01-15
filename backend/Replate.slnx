@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../web/Replate.Web/Replate.Web.csproj" Id="cec24ab1-cdf6-4251-91f4-19694bb3f104" />
+  <Project Path="Replate.Api/Replate.Api.csproj" Id="98390736-46e0-449b-b324-74071e4de4d7" />
+  <Project Path="Replate.Application/Replate.Application.csproj" Id="7b3c49fe-e476-429e-b2dc-c3cb52ed68c1" />
+  <Project Path="Replate.Domain/Replate.Domain.csproj" Id="3e5b7db5-f548-4463-adaa-44ea9f4586b5" />
+  <Project Path="Replate.Infrastructure/Replate.Infrastructure.csproj" Id="654a1b73-84d6-4925-a2d1-7c9b2f3cef0e" />
+</Solution>

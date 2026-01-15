@@ -1,0 +1,16 @@
+# ASP.NET
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Razor Pages / Web
+wwwroot/node_modules/
+
+# Flutter
+**/build/
+**/.dart_tool/
+
+# VS Code / JetBrains
+.vscode/
+.idea/

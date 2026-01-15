@@ -1,0 +1,6 @@
+@Replate.Api_HostAddress = http://localhost:5041
+
+GET {{Replate.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
