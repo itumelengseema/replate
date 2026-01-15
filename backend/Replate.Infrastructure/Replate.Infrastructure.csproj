@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Replate.Domain\Replate.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

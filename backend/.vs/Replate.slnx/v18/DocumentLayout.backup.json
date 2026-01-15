@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|c:\\users\\user-pc\\documents\\workspace\\replate\\backend\\replate.api\\replate.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|solutionrelative:replate.api\\replate.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|c:\\users\\user-pc\\documents\\workspace\\replate\\backend\\replate.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|solutionrelative:replate.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|c:\\users\\user-pc\\documents\\workspace\\replate\\backend\\replate.infrastructure\\replate.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|solutionrelative:replate.infrastructure\\replate.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|c:\\users\\user-pc\\documents\\workspace\\replate\\backend\\replate.api\\replate.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|solutionrelative:replate.api\\replate.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|c:\\users\\user-pc\\documents\\workspace\\replate\\backend\\replate.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,16 +34,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Replate.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Api\\Program.cs*",
+              "RelativeToolTip": "Replate.Api\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T19:48:36.744Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Replate.Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Infrastructure\\Replate.Infrastructure.csproj",
               "RelativeDocumentMoniker": "Replate.Infrastructure\\Replate.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Infrastructure\\Replate.Infrastructure.csproj",
-              "RelativeToolTip": "Replate.Infrastructure\\Replate.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Infrastructure\\Replate.Infrastructure.csproj*",
+              "RelativeToolTip": "Replate.Infrastructure\\Replate.Infrastructure.csproj*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-01-15T16:52:47.734Z",
@@ -47,12 +64,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Replate.Api.csproj",
               "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Api\\Replate.Api.csproj",
               "RelativeDocumentMoniker": "Replate.Api\\Replate.Api.csproj",
-              "ToolTip": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Api\\Replate.Api.csproj",
-              "RelativeToolTip": "Replate.Api\\Replate.Api.csproj",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Api\\Replate.Api.csproj*",
+              "RelativeToolTip": "Replate.Api\\Replate.Api.csproj*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-01-15T16:52:13.815Z",
@@ -60,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Infrastructure\\Class1.cs",
               "RelativeDocumentMoniker": "Replate.Infrastructure\\Class1.cs",
@@ -68,11 +85,12 @@
               "RelativeToolTip": "Replate.Infrastructure\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T16:51:56.15Z"
+              "WhenOpened": "2026-01-15T16:51:56.15Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Application\\Class1.cs",
               "RelativeDocumentMoniker": "Replate.Application\\Class1.cs",
@@ -80,11 +98,12 @@
               "RelativeToolTip": "Replate.Application\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T16:51:12.454Z"
+              "WhenOpened": "2026-01-15T16:51:12.454Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\WorkSpace\\replate\\backend\\Replate.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "Replate.Domain\\Class1.cs",
@@ -92,7 +111,8 @@
               "RelativeToolTip": "Replate.Domain\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T16:50:09.275Z"
+              "WhenOpened": "2026-01-15T16:50:09.275Z",
+              "EditorCaption": ""
             }
           ]
         }
