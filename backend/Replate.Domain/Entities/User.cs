@@ -3,14 +3,19 @@
     public class User
     {
         public int Id { get; set; }
+        public Guid PublicId { get; set; } = Guid.NewGuid();
+
+
         public string FirebaseUid { get; set; } = null!;
-        public string FullName { get; set; } = null!;
+        public string DisplayName { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public string Role { get; set; } = "User";
 
 
-        // Navigation properties
-        public ICollection<Deal>? Deals { get; set; }
+
+
+        public VendorProfile? VendorProfile { get; set; }
         public ICollection<Reservation>? Reservations { get; set; }
+
+        public bool IsVendor => VendorProfile != null;
     }
 }
