@@ -13,7 +13,7 @@
 
 
 
-        public VendorProfile? VendorProfile { get; set; }
+        public IEnumerable<VendorProfile>? VendorProfile { get; set; }
         public ICollection<Reservation>? Reservations { get; set; }
 
         public bool IsVendor => VendorProfile != null;
