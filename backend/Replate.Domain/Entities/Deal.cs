@@ -28,12 +28,15 @@ namespace Replate.Domain.Entities
 
         // Vendor who posted the deal
         public int VendorProfileId { get; set; }
+        public VendorProfile VendorProfile { get; set; } = null!;
 
 
         //Items in the deal 1 or many
 
         public ICollection<DealItem>? Items { get; set; } = new List<DealItem>();
         public ICollection<Reservation>? Reservations { get; set; }
+
+        public bool IsBundle => Items.Count > 1;
 
 
 
