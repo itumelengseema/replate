@@ -33,7 +33,7 @@ namespace Replate.Domain.Entities
 
         //Items in the deal 1 or many
 
-        public ICollection<DealItem>? Items { get; set; } = new List<DealItem>();
+        public ICollection<DealItem> Items { get; set; } = new List<DealItem>();
         public ICollection<Reservation>? Reservations { get; set; }
 
         public bool IsBundle => Items.Count > 1;

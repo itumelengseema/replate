@@ -3,6 +3,8 @@
     public class Reservation
     {
         public int Id { get; set; }
+        
+        public Guid PublicId { get; set; } = Guid.NewGuid();
 
         // Which deal is reserved
         public int DealId { get; set; }

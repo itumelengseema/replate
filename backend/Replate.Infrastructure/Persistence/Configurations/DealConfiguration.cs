@@ -26,14 +26,17 @@ public class DealConfiguration :  IEntityTypeConfiguration<Deal>
            .HasPrecision(10, 2);
        entity.Property(e=> e.DiscountedPrice)
            .HasPrecision(10, 2);
-       entity.Property(e => e.QuantityAvailable)
-           .IsRequired();
-       entity.Property(e=> e.IsActive)
-           .HasDefaultValue(true);
        
        entity.Property(e=> e.ExpiryDate)
            .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+       entity.Property(e => e.QuantityAvailable)
+           .IsRequired();
        
+       entity.Property(e=> e.IsActive)
+           .HasDefaultValue(true);
+       
+
        entity.HasOne(e=> e.VendorProfile)
            .WithMany(v => v.Deals)
            .HasForeignKey(e=> e.VendorProfileId)
