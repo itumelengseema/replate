@@ -93,7 +93,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -111,30 +111,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T09:12:41.718Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "RelativeToolTip": "Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T15:48:27.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReplateDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
-              "RelativeDocumentMoniker": "Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
-              "RelativeToolTip": "Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAgwBUAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T15:47:46.503Z"
             },
             {
               "$type": "Document",
@@ -212,6 +188,34 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T07:50:33.027Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReplateDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
+              "RelativeDocumentMoniker": "Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
+              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
+              "RelativeToolTip": "Replate.Infrastructure\\Persistence\\ReplateDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwBUAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T15:47:46.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "Replate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T15:48:27.671Z"
             },
             {
               "$type": "Document",
@@ -355,10 +359,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-15T16:51:12.454Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         }
