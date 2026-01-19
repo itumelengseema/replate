@@ -9,8 +9,10 @@
         //Business details
         public string BusinessName { get; set; } = null!;
         public string Decscription { get; set; } = null!;
-        public string Address { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
+        
+        //Address
+        public VendorAddress Address { get; set; } = null!;
 
         //Branding
         public string? LogoImageUrl { get; set; }

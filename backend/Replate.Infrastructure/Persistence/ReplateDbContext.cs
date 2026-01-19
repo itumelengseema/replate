@@ -16,6 +16,7 @@ namespace Replate.Infrastructure.Persistence
         public DbSet<Deal> Deals => Set<Deal>();
         public DbSet<DealItem> DealItems => Set<DealItem>();
         public DbSet<Reservation> Reservations => Set<Reservation>();
+        public DbSet<VendorAddress> VendorAddresses => Set<VendorAddress>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

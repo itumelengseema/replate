@@ -22,10 +22,7 @@ public class VendorProfileConfiguration : IEntityTypeConfiguration<VendorProfile
             .HasMaxLength(500);
         
         
-        //ToDo Update Entity to Separate Address Details example streetName,sub,City,postalCode
-        entity.Property(e => e.Address)
-            .HasMaxLength(128)
-            .IsRequired();
+     
         entity.Property(e => e.PhoneNumber)
             .HasMaxLength(50);
         
@@ -35,6 +32,12 @@ public class VendorProfileConfiguration : IEntityTypeConfiguration<VendorProfile
             .WithMany(u=> u.VendorProfile)
             .HasForeignKey(e=> e.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        entity.HasOne(e => e.Address)
+            .WithOne(a => a.VendorProfile)
+            .HasForeignKey<VendorAddress>(e => e.VendorProfileId)
+            .OnDelete(DeleteBehavior.Cascade);
+
 
     }
 }
