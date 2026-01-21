@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Replate.Domain.Entities;
 
-namespace Replate.Infrastructure.Persistence;
+namespace Replate.Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {

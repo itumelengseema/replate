@@ -8,11 +8,16 @@ public class VendorAddressConfiguration :IEntityTypeConfiguration<VendorAddress>
 {
     public void Configure(EntityTypeBuilder<VendorAddress> entity)
     {
-        entity.ToTable("vendorAddress");
+        entity.ToTable("VendorAddress");
         entity.HasKey(a => a.Id);
+        entity.HasIndex(a => a.PublicId)
+            .IsUnique();
+            
+        entity.Property(a => a.PublicId)
+            .IsRequired();
         entity.Property(a => a.Street)
             .IsRequired()
-            .HasMaxLength(128);
+            .HasMaxLength(200);
 
         entity.Property(a => a.Building)
             .HasMaxLength(150);
@@ -40,6 +45,7 @@ public class VendorAddressConfiguration :IEntityTypeConfiguration<VendorAddress>
         entity.Property(a => a.GooglePlaceId)
             .HasMaxLength(200);
         
-        entity.HasIndex(a => new  { a.Latitude, a.Longitude });
+        entity.Property(a => a.CreatedAt)
+            .IsRequired();
     }
 }

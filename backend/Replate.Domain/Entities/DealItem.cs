@@ -3,12 +3,12 @@
     public class DealItem
     {
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
-
+        
+        
+        public required string Name { get; set; } 
         public int Quantity { get; set; }
         public string? Description { get; set; }
 
-        public string? ImageUrl { get; set; }
 
         // Foreign Key to Deal
         public int DealId { get; set; }

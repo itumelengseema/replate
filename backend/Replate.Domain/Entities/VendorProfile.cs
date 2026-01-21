@@ -3,27 +3,31 @@
     public class VendorProfile
     {
         public int Id { get; set; }
-
         public Guid PublicId { get; set; } = Guid.NewGuid();
-
-        //Business details
-        public string BusinessName { get; set; } = null!;
-        public string Decscription { get; set; } = null!;
-        public string PhoneNumber { get; set; } = null!;
         
-        //Address
-        public VendorAddress Address { get; set; } = null!;
-
-        //Branding
-        public string? LogoImageUrl { get; set; }
-        public string? BannerImageUrl { get; set; }
-
-        // Ownership 
+        // Vendor Information
+        public required string BusinessName { get; set; }
+        public string?  Description { get; set; }
+        public string? LogoUrl { get; set; }
+        public required string PhoneNumber { get; set; }
+        public required string Email { get; set; }
+        
+        // Business Hours (stored as JSON or separate entity)
+        public string? BusinessHours { get; set; }
+        
+        // Relationships
         public int UserId { get; set; }
         public User User { get; set; } = null!;
-
-        //Deals owned by vendor
-        public ICollection<Deal>? Deals { get; set; }
-
+        
+        public int?  VendorAddressId { get; set; }
+        public VendorAddress?  VendorAddress { get; set; }
+        
+        // Navigation property
+        public ICollection<Deal> Deals { get; set; } = new List<Deal>();
+        
+        // Audit fields
+        public DateTime CreatedAt { get; set; } = DateTime. UtcNow;
+        public DateTime?  UpdatedAt { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

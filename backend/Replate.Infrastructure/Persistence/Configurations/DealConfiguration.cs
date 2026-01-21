@@ -6,45 +6,69 @@ namespace Replate.Infrastructure.Persistence.Configurations;
 
 public class DealConfiguration :  IEntityTypeConfiguration<Deal>
 {
-    public void Configure(EntityTypeBuilder<Deal> entity)
+    public void Configure(EntityTypeBuilder<Deal> builder)
     {
-       entity.HasKey(e => e.Id);
-       entity.HasIndex(e=> e.PublicId)
-           .IsUnique();
-       
-       entity.Property(e => e.Title)
-           .HasMaxLength(100)
-           .IsRequired();
-
-       entity.Property(e => e.Description)
-           .HasMaxLength(128);
-
-       entity.Property(e => e.Category)
-           .HasConversion<int>();
-       
-       entity.Property(e=>e.OriginalPrice)
-           .HasPrecision(10, 2);
-       entity.Property(e=> e.DiscountedPrice)
-           .HasPrecision(10, 2);
-       
-       entity.Property(e=> e.ExpiryDate)
-           .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
-       entity.Property(e => e.QuantityAvailable)
-           .IsRequired();
-       
-       entity.Property(e=> e.IsActive)
-           .HasDefaultValue(true);
-       
-
-       entity.HasOne(e=> e.VendorProfile)
-           .WithMany(v => v.Deals)
-           .HasForeignKey(e=> e.VendorProfileId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-
-       entity.HasIndex(e => e.ExpiryDate);
-       entity.HasIndex(e => e.Category);
-
+       builder.ToTable("Deals");
+            
+            builder.HasKey(d => d.Id);
+            
+            builder.HasIndex(d => d.PublicId)
+                .IsUnique();
+            
+            builder.Property(d => d.PublicId)
+                .IsRequired();
+            
+            builder.Property(d => d. Title)
+                .IsRequired()
+                .HasMaxLength(200);
+            
+            builder.Property(d => d.Description)
+                .HasMaxLength(1000);
+            
+            builder.Property(d => d.OriginalPrice)
+                .IsRequired()
+                .HasPrecision(10, 2);
+            
+            builder.Property(d => d.DiscountedPrice)
+                .IsRequired()
+                .HasPrecision(10, 2);
+            
+            builder.Property(d => d.AvailableQuantity)
+                .IsRequired();
+            
+            builder.Property(d => d. AvailableQuantity)
+                .IsRequired();
+            
+            builder.Property(d => d.DealType)
+                .IsRequired()
+                .HasConversion<int>();
+            
+            builder. Property(d => d.Category)
+                .IsRequired()
+                .HasConversion<int>();
+            
+            builder.Property(d => d. AvailableFrom)
+                .IsRequired();
+            
+            builder.Property(d => d.AvailableUntil)
+                .IsRequired();
+            
+            builder. Property(d => d.CreatedAt)
+                .IsRequired();
+            
+            builder.Property(d => d.IsActive)
+                .IsRequired()
+                .HasDefaultValue(true);
+            
+            // Relationships
+            builder.HasMany(d => d.DealItems)
+                .WithOne(di => di.Deal)
+                .HasForeignKey(di => di.DealId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            builder.HasMany(d => d.Reservations)
+                .WithOne(r => r.Deal)
+                .HasForeignKey(r => r.DealId)
+                .OnDelete(DeleteBehavior.Restrict);
     }
 }

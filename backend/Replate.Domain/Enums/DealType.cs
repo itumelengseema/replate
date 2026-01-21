@@ -2,7 +2,7 @@
 {
     public enum DealType
     {
-        SingleItem = 1,
-        Combo = 2,
+        SurpriseBag = 0,
+        SpecificItems = 1
     }
 }

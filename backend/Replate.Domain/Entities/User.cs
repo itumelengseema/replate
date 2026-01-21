@@ -1,21 +1,28 @@
-﻿namespace Replate.Domain.Entities
+﻿using Replate.Domain.Enums;
+
+namespace Replate.Domain.Entities
 {
     public class User
     {
         public int Id { get; set; }
         public Guid PublicId { get; set; } = Guid.NewGuid();
-
-
-        public string FirebaseUid { get; set; } = null!;
-        public string DisplayName { get; set; } = null!;
-        public string Email { get; set; } = null!;
-
-
-
-
-        public IEnumerable<VendorProfile>? VendorProfile { get; set; }
-        public ICollection<Reservation>? Reservations { get; set; }
-
-        public bool IsVendor => VendorProfile != null;
+        
+        // User Information
+        public required string FirebaseUid { get; set; }
+        public required string Email { get; set; }
+        public string? DisplayName { get; set; }
+        public string? PhotoUrl { get; set; }
+        
+        // User Role
+        public UserRole Role { get; set; } = UserRole.Customer;
+        
+        // Relationships
+        public VendorProfile? VendorProfile { get; set; }
+        public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+        
+        // Audit fields
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }
