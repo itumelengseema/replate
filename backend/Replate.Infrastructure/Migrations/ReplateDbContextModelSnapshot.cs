@@ -30,22 +30,31 @@ namespace Replate.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("AvailableFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("AvailableQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("AvailableUntil")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Category")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DealType")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<decimal>("DiscountedPrice")
                         .HasPrecision(10, 2)
                         .HasColumnType("decimal(10,2)");
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -59,29 +68,25 @@ namespace Replate.Infrastructure.Migrations
                     b.Property<Guid>("PublicId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("QuantityAvailable")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("VendorProfileId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Category");
-
-                    b.HasIndex("ExpiryDate");
-
                     b.HasIndex("PublicId")
                         .IsUnique();
 
                     b.HasIndex("VendorProfileId");
 
-                    b.ToTable("Deals");
+                    b.ToTable("Deals", (string)null);
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.DealItem", b =>
@@ -96,9 +101,7 @@ namespace Replate.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -123,13 +126,32 @@ namespace Replate.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DealId")
                         .HasColumnType("int");
+
+                    b.Property<string>("PickupInstructions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PickupTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("PublicId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("ReservedAt")
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")
@@ -144,7 +166,7 @@ namespace Replate.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.User", b =>
@@ -155,24 +177,45 @@ namespace Replate.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("FirebaseUid")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("PhotoUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<Guid>("PublicId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("FirebaseUid")
                         .IsUnique();
@@ -180,7 +223,7 @@ namespace Replate.Infrastructure.Migrations
                     b.HasIndex("PublicId")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.VendorAddress", b =>
@@ -206,6 +249,9 @@ namespace Replate.Infrastructure.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("GooglePlaceId")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
@@ -226,22 +272,26 @@ namespace Replate.Infrastructure.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Street")
                         .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("VendorProfileId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VendorProfileId")
+                    b.HasIndex("PublicId")
                         .IsUnique();
 
-                    b.HasIndex("Latitude", "Longitude");
-
-                    b.ToTable("vendorAddress", (string)null);
+                    b.ToTable("VendorAddress", (string)null);
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.VendorProfile", b =>
@@ -252,21 +302,35 @@ namespace Replate.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("BannerImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BusinessName")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
-
-                    b.Property<string>("Decscription")
-                        .IsRequired()
+                    b.Property<string>("BusinessHours")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("LogoImageUrl")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("BusinessName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("LogoUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -276,7 +340,13 @@ namespace Replate.Infrastructure.Migrations
                     b.Property<Guid>("PublicId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VendorAddressId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -284,9 +354,14 @@ namespace Replate.Infrastructure.Migrations
                     b.HasIndex("PublicId")
                         .IsUnique();
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.ToTable("VendorProfiles");
+                    b.HasIndex("VendorAddressId")
+                        .IsUnique()
+                        .HasFilter("[VendorAddressId] IS NOT NULL");
+
+                    b.ToTable("VendorProfile", (string)null);
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.Deal", b =>
@@ -294,7 +369,7 @@ namespace Replate.Infrastructure.Migrations
                     b.HasOne("Replate.Domain.Entities.VendorProfile", "VendorProfile")
                         .WithMany("Deals")
                         .HasForeignKey("VendorProfileId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("VendorProfile");
@@ -303,7 +378,7 @@ namespace Replate.Infrastructure.Migrations
             modelBuilder.Entity("Replate.Domain.Entities.DealItem", b =>
                 {
                     b.HasOne("Replate.Domain.Entities.Deal", "Deal")
-                        .WithMany("Items")
+                        .WithMany("DealItems")
                         .HasForeignKey("DealId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -322,7 +397,7 @@ namespace Replate.Infrastructure.Migrations
                     b.HasOne("Replate.Domain.Entities.User", "User")
                         .WithMany("Reservations")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Deal");
@@ -330,31 +405,27 @@ namespace Replate.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.VendorAddress", b =>
-                {
-                    b.HasOne("Replate.Domain.Entities.VendorProfile", "VendorProfile")
-                        .WithOne("Address")
-                        .HasForeignKey("Replate.Domain.Entities.VendorAddress", "VendorProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("VendorProfile");
-                });
-
             modelBuilder.Entity("Replate.Domain.Entities.VendorProfile", b =>
                 {
                     b.HasOne("Replate.Domain.Entities.User", "User")
-                        .WithMany("VendorProfile")
-                        .HasForeignKey("UserId")
+                        .WithOne("VendorProfile")
+                        .HasForeignKey("Replate.Domain.Entities.VendorProfile", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Replate.Domain.Entities.VendorAddress", "VendorAddress")
+                        .WithOne("VendorProfile")
+                        .HasForeignKey("Replate.Domain.Entities.VendorProfile", "VendorAddressId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.Navigation("User");
+
+                    b.Navigation("VendorAddress");
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.Deal", b =>
                 {
-                    b.Navigation("Items");
+                    b.Navigation("DealItems");
 
                     b.Navigation("Reservations");
                 });
@@ -366,11 +437,13 @@ namespace Replate.Infrastructure.Migrations
                     b.Navigation("VendorProfile");
                 });
 
+            modelBuilder.Entity("Replate.Domain.Entities.VendorAddress", b =>
+                {
+                    b.Navigation("VendorProfile");
+                });
+
             modelBuilder.Entity("Replate.Domain.Entities.VendorProfile", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
-
                     b.Navigation("Deals");
                 });
 #pragma warning restore 612, 618

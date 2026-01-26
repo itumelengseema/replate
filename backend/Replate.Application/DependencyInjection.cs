@@ -1,17 +1,24 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-using Replate.Application.Common.Vendors.CreateVendorProfile;
+﻿using System.Reflection;
+using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Replate.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApplication(this IServiceCollection services)
-    {
-        //Register AutoMapper
-      //  services.AddAutoMapper(typeof(DependencyInjection).Assembly);
-   
-        services.AddScoped<CreateVendorProfileHandler>();
+    public static IServiceCollection AddApplication(this IServiceCollection services){
+        // Add Application Services 
+        
+        //MediatR
+        services.AddMediatR(cfg =>
+            cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            
+       // AutoMapper
+       services.AddAutoMapper(Assembly.GetExecutingAssembly());
+       
+       // Validation
+       services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        
         return services;
     }
 }

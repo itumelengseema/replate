@@ -8,16 +8,22 @@ public class ReplateDbContextFactory: IDesignTimeDbContextFactory<ReplateDbConte
 {
     public ReplateDbContext CreateDbContext(string[] args)
     {
+        //Build configuration
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Replate.Api"))
             .AddJsonFile("appsettings.json", optional: false)
             .AddJsonFile("appsettings.Development.json", optional: true)
             .Build();
 
-        var optionsBuilder = new DbContextOptionsBuilder<ReplateDbContext>();
+       // Get connection string
         var connectionString = configuration.GetConnectionString("DefaultConnection");
+        if (string.IsNullOrEmpty(connectionString))
+        {
+            throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+        }
         
-        optionsBuilder.UseSqlServer(connectionString);
+        var optionsBuilder = new DbContextOptionsBuilder<ReplateDbContext>();
+        optionsBuilder.UseSqlServer(connectionString, b => b.MigrationsAssembly("Replate.Infrastructure"));
 
         return new ReplateDbContext(optionsBuilder.Options);
     }

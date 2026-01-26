@@ -8,9 +8,9 @@ public class VendorAddress
     //Address fields
     public required string Street { get; set; } 
     public string Building { get; set; } = string.Empty;
-    public required string City { get; set; } = null!;
+    public required string City { get; set; } 
     public required string  Province { get; set; } 
-    public required string PostalCode { get; set; } = null!;
+    public required string PostalCode { get; set; }
     public string Country { get; set; } = "South Africa";
     
     //Geo

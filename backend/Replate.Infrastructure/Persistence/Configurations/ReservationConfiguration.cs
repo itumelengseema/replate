@@ -8,10 +8,26 @@ public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
 {
     public void Configure(EntityTypeBuilder<Reservation> entity)
     {
+        entity.ToTable("Reservations");
         entity.HasKey(e => e.Id);
         
         entity.HasIndex(e => e.PublicId)
             .IsUnique();
+        entity.Property(e => e.PublicId)
+            .IsRequired();
+        
+        entity.Property(e => e.Quantity)
+            .IsRequired();
+        entity.Property(e => e.TotalPrice)
+            .IsRequired()
+            .HasPrecision(10, 2);
+        entity.Property(e => e.Status)
+            .IsRequired()
+            .HasConversion<int>();
+        entity.Property(e => e.CreatedAt)
+            .IsRequired();
+        entity.Property(e => e.UpdatedAt)
+            .IsRequired();
         
         entity.HasOne(e=> e.Deal)
             .WithMany(d => d.Reservations)
