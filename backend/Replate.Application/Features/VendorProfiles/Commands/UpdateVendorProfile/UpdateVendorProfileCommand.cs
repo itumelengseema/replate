@@ -6,5 +6,6 @@ namespace Replate.Application.Features.VendorProfiles.Commands.UpdateVendorProfi
 
 public class UpdateVendorProfileCommand : IRequest<Result<VendorProfileDto>>
 {
-    
+    public Guid PublicId { get; set; }
+    public UpdateVendorProfileDto VendorProfile { get; set; } = null!;
 }
