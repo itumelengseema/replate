@@ -8,11 +8,17 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        // VendorProfile mappings 
+        // Entity to DTO
         CreateMap<VendorProfile, VendorProfileDto>()
-            .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.VendorAddress));
-
-        CreateMap<VendorProfileDto, VendorProfile>();
+            .ForMember(d => d.Address, opt => opt.MapFrom(s => s.VendorAddress));
+            
+        CreateMap<VendorAddress, VendorAddressDto>();
+            
+        // DTO to Entity (only maps matching properties, ignores the rest)
+        CreateMap<CreateVendorProfileDto, VendorProfile>();
+        CreateMap<CreateVendorProfileDto, VendorAddress>();
+        CreateMap<UpdateVendorProfileDto, VendorProfile>();
+        CreateMap<UpdateVendorProfileDto, VendorAddress>();
 
     }
 }
