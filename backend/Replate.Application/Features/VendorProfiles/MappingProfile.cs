@@ -16,9 +16,11 @@ public class MappingProfile : Profile
             
         // DTO to Entity (only maps matching properties, ignores the rest)
         CreateMap<CreateVendorProfileDto, VendorProfile>();
-        CreateMap<CreateVendorProfileDto, VendorAddress>();
+        CreateMap<CreateVendorProfileDto, VendorAddress>()
+            .ForMember(dest => dest.Building, opt => opt.MapFrom(src => src.Building ?? string.Empty));
         CreateMap<UpdateVendorProfileDto, VendorProfile>();
-        CreateMap<UpdateVendorProfileDto, VendorAddress>();
+        CreateMap<UpdateVendorProfileDto, VendorAddress>()
+            .ForMember(dest => dest.Building, opt => opt.MapFrom(src => src.Building ?? string.Empty));
 
     }
 }
