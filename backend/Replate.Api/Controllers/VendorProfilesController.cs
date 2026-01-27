@@ -11,15 +11,8 @@ namespace Replate.Api.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
-    public class VendorProfilesController : ControllerBase
+    public class VendorProfilesController(IMediator mediator) : ControllerBase
     {
-        private readonly IMediator _mediator;
-
-        public VendorProfilesController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
         /// <summary>
         /// Create a new vendor profile
         /// </summary>
@@ -39,11 +32,11 @@ namespace Replate.Api.Controllers
                 VendorProfile = dto
             };
 
-            var result = await _mediator.Send(command);
+            var result = await mediator.Send(command);
 
             if (!result.IsSuccess)
             {
-                // ✅ Fixed: Check for null before calling .Any()
+                
                 if (result.ValidationErrors != null && result.ValidationErrors.Any())
                 {
                     return BadRequest(new { errors = result.ValidationErrors });
@@ -68,7 +61,7 @@ namespace Replate.Api.Controllers
         public async Task<IActionResult> GetVendorProfile(Guid publicId)
         {
             var query = new GetVendorProfileQuery { PublicId = publicId };
-            var result = await _mediator.Send(query);
+            var result = await mediator.Send(query);
 
             if (!result.IsSuccess)
             {
@@ -89,7 +82,7 @@ namespace Replate.Api.Controllers
         public async Task<IActionResult> GetVendorProfileByUserId(int userId)
         {
             var query = new GetVendorProfileByUserIdQuery { UserId = userId };
-            var result = await _mediator.Send(query);
+            var result = await mediator.Send(query);
 
             if (!result.IsSuccess)
             {
@@ -119,7 +112,7 @@ namespace Replate.Api.Controllers
                 VendorProfile = dto
             };
 
-            var result = await _mediator.Send(command);
+            var result = await mediator.Send(command);
 
             if (!result.IsSuccess)
             {
