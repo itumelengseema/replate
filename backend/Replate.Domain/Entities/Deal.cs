@@ -6,7 +6,6 @@ namespace Replate.Domain.Entities
     {
         public int Id { get; set; }
         public Guid PublicId { get; set; } = Guid.NewGuid();
-
         
         // Deal Information
         public required string Title { get; set; }
@@ -18,20 +17,13 @@ namespace Replate.Domain.Entities
         //Deal Type & Category
         public DealType DealType { get; set; }
         public FoodCategory Category { get; set; }
-
-      
-
+        
 
         // Timing
         public DateTime AvailableFrom { get; set; }
         public DateTime AvailableUntil { get; set; }
 
-    
-
-     
-
-
-
+        
         // Vendor who posted the deal
         public int VendorProfileId { get; set; }
         public VendorProfile VendorProfile { get; set; } = null!;
@@ -41,14 +33,10 @@ namespace Replate.Domain.Entities
 
         public ICollection<DealItem> DealItems { get; set; } = new List<DealItem>();
         public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
-
         // Audit fields
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; } = true;
-
-
-
-
+        
     }
 }
