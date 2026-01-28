@@ -1,5 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 using Replate.Application;
 using Replate.Infrastructure;
+using Replate.Infrastructure.Persistence;
+using Replate.Infrastructure.Persistence.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +28,33 @@ builder.Services.AddSwaggerGen(s =>
 });
 
 var app = builder.Build();
+
+// Apply migrations and seed the database
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    
+    try
+    {
+        var context = services.GetRequiredService<ReplateDbContext>();
+        
+        // Apply any pending migrations
+        logger.LogInformation("Applying database migrations...");
+        await context.Database.MigrateAsync();
+        logger.LogInformation("Database migrations applied successfully.");
+        
+        // Seed the database
+        logger.LogInformation("Starting database seeding...");
+        await ApplicationDbContextSeed.SeedAsync(context);
+        logger.LogInformation("Database seeding completed.");
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "An error occurred while migrating or seeding the DB.");
+        throw;
+    }
+}
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())

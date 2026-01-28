@@ -11,8 +11,8 @@ public class ReplateDbContextFactory: IDesignTimeDbContextFactory<ReplateDbConte
         //Build configuration
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Replate.Api"))
-            .AddJsonFile("appsettings.json", optional: false)
-            .AddJsonFile("appsettings.Development.json", optional: true)
+            .AddJsonFile("appsettings.json", optional: true)
+            .AddJsonFile("appsettings.Development.json", optional: false)
             .Build();
 
        // Get connection string
