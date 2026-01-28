@@ -19,9 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Deal\Commands\" />
-    <Folder Include="Features\Deal\DTOs\" />
-    <Folder Include="Features\Deal\Queries\" />
+    <Folder Include="Features\Deals\Commands\" />
+    <Folder Include="Features\Deals\Queries\" />
   </ItemGroup>
 
 </Project>

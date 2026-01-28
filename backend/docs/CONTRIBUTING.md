@@ -1,4 +1,4 @@
-﻿# Contributing to Replate
+﻿  # Contributing to Replate
 
 Welcome! Thank you for considering contributing to the Replate project. This document outlines the process and standards for contributing code, documentation, and ideas to ensure a smooth and collaborative workflow.
 
