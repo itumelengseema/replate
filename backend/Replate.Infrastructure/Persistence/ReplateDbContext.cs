@@ -21,6 +21,8 @@ namespace Replate.Infrastructure.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
+            // This automatically finds and applies all IEntityTypeConfiguration implementations in the assembly
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ReplateDbContext).Assembly);
         }
 

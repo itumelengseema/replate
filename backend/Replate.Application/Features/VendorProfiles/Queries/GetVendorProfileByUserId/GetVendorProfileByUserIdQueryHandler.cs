@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Replate.Application.Common.Models;
@@ -14,10 +14,10 @@ public class GetVendorProfileByUserIdQueryHandler
    private readonly IApplicationDbContext _db;
    private readonly IMapper _mapper;
 
-   public GetVendorProfileByUserIdQueryHandler()
+   public GetVendorProfileByUserIdQueryHandler(IApplicationDbContext db, IMapper mapper)
    {
-      _db = _db;
-      _mapper = _mapper;
+      _db = db;
+      _mapper = mapper;
    }
    
    public async Task<Result<VendorProfileDto>> Handle(GetVendorProfileByUserIdQuery request, CancellationToken cancellationToken)
