@@ -1,6 +1,6 @@
 ﻿using Replate.Domain.Enums;
 
-namespace Replate.Application.Features.Deal.DTOs;
+namespace Replate.Application.Features.Deals.DTOs;
 
 public class UpdateDealDto
 {
