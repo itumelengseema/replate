@@ -5,22 +5,22 @@ using Replate.Application.Features.Deals.DTOs;
 using Replate.Application.Interface;
 using Replate.Domain.Entities;
 
-namespace Replate.Application.Features.Deals.Commands;
+namespace Replate.Application.Features.Deals.Commands.CreateDeal;
 
-public class CreateDealCommandHandler : IRequestHandler<CreateDealDto, Result<DealDto>>
+public class CreateDealCommandHandler : IRequestHandler<CreateDealCommand, Result<DealDto>>
 {
     private readonly IApplicationDbContext _db;
     private readonly IMapper _mapper;
 
-    public CreateDealCommandHandler( IApplicationDbContext db, IMapper mapper)
+    public CreateDealCommandHandler(IApplicationDbContext db, IMapper mapper)
     {
         _db = db;
         _mapper = mapper;
     }
-    public async Task<Result<DealDto>> Handle(CreateDealDto request, CancellationToken cancellationToken)
+    public async Task<Result<DealDto>> Handle(CreateDealCommand request, CancellationToken cancellationToken)
     {
         //map  the dto to the entity
-        var dealEntity = _mapper.Map<Deal>(request);
+        var dealEntity = _mapper.Map<Deal>(request.CreateDealDto);
         
         //add the entity to the db
         _db.Deals.Add(dealEntity);
