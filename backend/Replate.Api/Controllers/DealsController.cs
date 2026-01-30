@@ -1,8 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Replate.Application.Features.Deals.Commands.CreateDeal;
+using Replate.Application.Features.Deals.Commands.DeleteDeal;
 using Replate.Application.Features.Deals.Commands.UpdateDeal;
 using Replate.Application.Features.Deals.DTOs;
+using Replate.Application.Features.Deals.Queries.GetAllDealsQuery;
+using Replate.Application.Features.Deals.Queries.GetDealByIdQuery;
 
 namespace Replate.Api.Controllers;
 
@@ -41,9 +44,10 @@ public class DealsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAllDeals()
     {
-        //TODO You need to implement GetAllDealsQuery and handler
         var result = await _mediator.Send(new GetAllDealsQuery());
-        return Ok(result);
+        if (!result.IsSuccess)
+            return BadRequest(result.ErrorMessage);
+        return Ok(result.Data);
     }
 
     /// <summary>
@@ -54,11 +58,10 @@ public class DealsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetDealById([FromRoute] Guid id)
     {
-        // You need to implement GetDealByIdQuery and handler
-        var result = await _mediator.Send(new GetDealByIdQuery { PublicId = id });
-        if (result == null)
-            return NotFound();
-        return Ok(result);
+        var result = await _mediator.Send(new GetDealByIdQuery { Id = id });
+        if (result == null || !result.IsSuccess)
+            return NotFound(result?.ErrorMessage ?? "Deal not found");
+        return Ok(result.Data);
     }
 
     /// <summary>
@@ -89,7 +92,6 @@ public class DealsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeleteDeal([FromRoute] Guid id)
     {
-        // You need to implement DeleteDealCommand and handler
         var result = await _mediator.Send(new DeleteDealCommand { PublicId = id });
         if (!result.IsSuccess)
             return NotFound(result.ErrorMessage);

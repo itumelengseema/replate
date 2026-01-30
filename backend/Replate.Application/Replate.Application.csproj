@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Deals\Commands\PatchDeal\" />
-    <Folder Include="Features\Deals\Queries\GetAllDealsQuery\" />
   </ItemGroup>
 
 </Project>
