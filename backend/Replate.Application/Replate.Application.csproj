@@ -21,7 +21,9 @@
   <ItemGroup>
     <Folder Include="Features\Deals\Commands\PatchDeal\" />
     <Folder Include="Features\Reservations\Commands\UpdateReservation\" />
-    <Folder Include="Features\Reservations\Queries\" />
+    <Folder Include="Features\Reservations\Queries\GetReservationsByDate\" />
+    <Folder Include="Features\Reservations\Queries\GetReservationsById\" />
+    <Folder Include="Features\Reservations\Queries\GetReservations\" />
     <Folder Include="Features\Users\Commands\" />
   </ItemGroup>
 

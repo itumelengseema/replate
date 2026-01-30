@@ -3,6 +3,11 @@ using Replate.Application;
 using Replate.Infrastructure;
 using Replate.Infrastructure.Persistence;
 using Replate.Infrastructure.Persistence.Seeds;
+using System.Text;
+using System.Linq;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Http.Metadata;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,5 +77,42 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Export registered endpoints to api.http for easy testing (written to project folder)
+try
+{
+    var endpointSource = app.Services.GetService<EndpointDataSource>();
+    if (endpointSource != null)
+    {
+        var sb = new StringBuilder();
+        foreach (var ep in endpointSource.Endpoints)
+        {
+            if (ep is RouteEndpoint routeEndpoint)
+            {
+                var pattern = routeEndpoint.RoutePattern?.RawText ?? routeEndpoint.RoutePattern?.ToString() ?? "/";
+                if (!pattern.StartsWith("/")) pattern = "/" + pattern;
+
+                var httpMeta = ep.Metadata.OfType<HttpMethodMetadata>().FirstOrDefault();
+                var methods = httpMeta?.HttpMethods ?? new[] { "GET" };
+
+                foreach (var method in methods)
+                {
+                    sb.AppendLine($"### {method} {pattern}");
+                    sb.AppendLine($"{method} http://localhost:5041{pattern}");
+                    sb.AppendLine("Accept: application/json");
+                    sb.AppendLine();
+                }
+            }
+        }
+
+        var outPath = Path.Combine(Directory.GetCurrentDirectory(), "api.http");
+        File.WriteAllText(outPath, sb.ToString());
+        Console.WriteLine($"Wrote endpoints to {outPath}");
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Failed to write api.http: {ex.Message}");
+}
 
 app.Run();
