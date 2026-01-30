@@ -7,5 +7,6 @@ namespace Replate.Application.Features.Deals.Commands.CreateDeal;
 public class CreateDealCommand : IRequest<Result<DealDto>>
 {
     public int DealId { get; set; }
-    public CreateDealDto Deal { get; set; } = null!;
+   
+    public CreateDealDto CreateDealDto { get; set; } = null!;
 }

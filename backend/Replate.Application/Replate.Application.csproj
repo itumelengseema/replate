@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Deals\Queries\" />
+    <Folder Include="Features\Deals\Commands\PatchDeal\" />
   </ItemGroup>
 
 </Project>
