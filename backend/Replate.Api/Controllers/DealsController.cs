@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Replate.Application.Features.Deals.Commands.CreateDeal;
 using Replate.Application.Features.Deals.Commands.DeleteDeal;
+using Replate.Application.Features.Deals.Commands.PatchDeal;
 using Replate.Application.Features.Deals.Commands.UpdateDeal;
 using Replate.Application.Features.Deals.DTOs;
 using Replate.Application.Features.Deals.Queries.GetAllDealsQuery;
@@ -33,7 +34,7 @@ public class DealsController : ControllerBase
         var result = await _mediator.Send(command);
         if (!result.IsSuccess)
             return BadRequest(result.ErrorMessage);
-        // Assumes DealDto has a PublicId property
+      
         return CreatedAtAction(nameof(GetDealById), new { id = result.Data.PublicId }, result.Data);
     }
 
@@ -81,6 +82,34 @@ public class DealsController : ControllerBase
                 return NotFound(result.ErrorMessage);
             return BadRequest(result.ErrorMessage);
         }
+        return Ok(result.Data);
+    }
+    
+    
+    /// <summary>
+    ///  Partially updates an existing deal.
+    ///  </summary>
+    [HttpPatch("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    
+    public async Task<IActionResult> PatchDeal([FromRoute] Guid id, [FromBody] PatchDealDto request)
+    {
+        if (id != request.PublicId)
+        {
+            return BadRequest("ID in URL does not match ID in body.");
+        }
+        var command = new PatchDealCommand { DealId = id, PatchDealDto = request };
+        var result = await _mediator.Send(command); 
+
+        if (!result.IsSuccess)
+        {
+            if (result?.ErrorMessage == "Deal not found")
+                return NotFound(result.ErrorMessage);
+            return BadRequest(result?.ErrorMessage ?? "An error occurred.");
+        }
+        Console.WriteLine("Patched Deal: " + result.Data);
         return Ok(result.Data);
     }
 
