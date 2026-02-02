@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+﻿﻿using FluentValidation;
 using Replate.Application.Features.Deals.DTOs;
 
 namespace Replate.Application.Features.Deals.Commands.PatchDeal;
@@ -44,11 +44,11 @@ public class PatchDealCommandValidator : AbstractValidator<PatchDealCommand>
                 .Must(dto => dto.DiscountedPrice <= dto.OriginalPrice)
                 .WithMessage("DiscountedPrice must be less than or equal to OriginalPrice.");
         });
-        // DealType: Only validate if provided
-        When(x => x.PatchDealDto.DealType.HasValue, () => {
-            RuleFor(x => x.PatchDealDto.DealType!.Value)
+        // FoodListingType: Only validate if provided
+        When(x => x.PatchDealDto.FoodListingType.HasValue, () => {
+            RuleFor(x => x.PatchDealDto.FoodListingType!.Value)
                 .IsInEnum()
-                .WithMessage("DealType is invalid.");
+                .WithMessage("FoodListingType is invalid.");
         });
         // Category: Only validate if provided
         When(x => x.PatchDealDto.Category.HasValue, () => {

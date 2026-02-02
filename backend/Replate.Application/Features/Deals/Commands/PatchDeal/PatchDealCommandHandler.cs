@@ -21,35 +21,35 @@ public class PatchDealCommandHandler
     }
     public async Task<Result<DealDto>> Handle(PatchDealCommand request, CancellationToken cancellationToken)
     {
-       var deal = await _db.Deals
+       var foodListing = await _db.FoodListings
            .FirstOrDefaultAsync(d => d.PublicId == request.PatchDealDto.PublicId, cancellationToken);
 
-       if (deal == null)
+       if (foodListing == null)
        {
            return Result<DealDto>.Failure("Deal not found");
        }
        // Patch only the provided Fields
-       //Update the deal properties
+       //Update the food listing properties
        if (!string.IsNullOrWhiteSpace(request.PatchDealDto.Title))
-           deal.Title = request.PatchDealDto.Title;
+           foodListing.Title = request.PatchDealDto.Title;
        if (!string.IsNullOrWhiteSpace(request.PatchDealDto.Description))
-           deal.Description = request.PatchDealDto.Description;
+           foodListing.Description = request.PatchDealDto.Description;
        if (request.PatchDealDto.OriginalPrice.HasValue)
-           deal.OriginalPrice = request.PatchDealDto.OriginalPrice.Value;
+           foodListing.OriginalPrice = request.PatchDealDto.OriginalPrice.Value;
        if (request.PatchDealDto.DiscountedPrice.HasValue)
-           deal.DiscountedPrice = request.PatchDealDto.DiscountedPrice.Value;
+           foodListing.DiscountedPrice = request.PatchDealDto.DiscountedPrice.Value;
        if (request.PatchDealDto.AvailableQuantity.HasValue)
-           deal.AvailableQuantity = request.PatchDealDto.AvailableQuantity.Value;
-       if (request.PatchDealDto.DealType.HasValue)
-           deal.DealType = request.PatchDealDto.DealType.Value;
+           foodListing.AvailableQuantity = request.PatchDealDto.AvailableQuantity.Value;
+       if (request.PatchDealDto.FoodListingType.HasValue)
+           foodListing.FoodListingType = request.PatchDealDto.FoodListingType.Value;
        if (request.PatchDealDto.Category.HasValue)
-           deal.Category = request.PatchDealDto.Category.Value;
+           foodListing.Category = request.PatchDealDto.Category.Value;
        if (request.PatchDealDto.AvailableFrom.HasValue)
-           deal.AvailableFrom = request.PatchDealDto.AvailableFrom.Value;
+           foodListing.AvailableFrom = request.PatchDealDto.AvailableFrom.Value;
        if (request.PatchDealDto.AvailableUntil.HasValue)
-           deal.AvailableUntil = request.PatchDealDto.AvailableUntil.Value;
+           foodListing.AvailableUntil = request.PatchDealDto.AvailableUntil.Value;
        
-       deal.UpdatedAt = DateTime.UtcNow;
+       foodListing.UpdatedAt = DateTime.UtcNow;
        try
        {
            await _db.SaveChangesAsync(cancellationToken);
@@ -59,6 +59,6 @@ public class PatchDealCommandHandler
            return Result<DealDto>.Failure("The update operation failed due to a foreign key constraint violation.");
        }
 
-       return Result<DealDto>.Success(_mapper.Map<DealDto>(deal));
+       return Result<DealDto>.Success(_mapper.Map<DealDto>(foodListing));
     }
 }

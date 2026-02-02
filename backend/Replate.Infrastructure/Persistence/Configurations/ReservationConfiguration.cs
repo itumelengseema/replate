@@ -29,9 +29,9 @@ public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
         entity.Property(e => e.UpdatedAt)
             .IsRequired();
         
-        entity.HasOne(e=> e.Deal)
+        entity.HasOne(e=> e.FoodListing)
             .WithMany(d => d.Reservations)
-            .HasForeignKey(e => e.DealId)
+            .HasForeignKey(e => e.FoodListingId)
             .OnDelete(DeleteBehavior.Restrict);
         
         entity.HasOne(e => e.User)

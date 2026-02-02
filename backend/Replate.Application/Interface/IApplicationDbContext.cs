@@ -10,7 +10,7 @@ public interface IApplicationDbContext
     DbSet<User> Users { get; set; }
     DbSet<VendorProfile> VendorProfiles { get; set; }
     DbSet<VendorAddress> VendorAddresses { get; set; }
-    DbSet<Deal> Deals { get; set; }
+    DbSet<FoodListing> FoodListings { get; set; }
     DbSet<Reservation> Reservations { get; set; }
     
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) ;

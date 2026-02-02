@@ -1,13 +1,11 @@
 ﻿using Replate.Application.Features.Deals.DTOs;
 using Replate.Application.Features.Users.DTOs;
-
 using Replate.Domain.Enums;
 
 namespace Replate.Application.Features.Reservations.DTOs;
 
 public class ReservationDto
 {
-
     public Guid PublicId { get; set; } = Guid.NewGuid();
     
     // Reservation Details
@@ -19,9 +17,9 @@ public class ReservationDto
     public DateTime PickupTime { get; set; }
     public string? PickupInstructions { get; set; }
 
-    // Which deal is reserved
-    public int DealId { get; set; }
-    public DealDto Deal { get; set; } 
+    // Which food listing is reserved
+    public int FoodListingId { get; set; }
+    public DealDto FoodListing { get; set; } = null!;
 
     // Which user reserved it
     public int UserId { get; set; }

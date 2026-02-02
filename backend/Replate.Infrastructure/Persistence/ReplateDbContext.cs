@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿﻿using Microsoft.EntityFrameworkCore;
 using Replate.Application.Interface;
 using Replate.Domain.Entities;
 
@@ -15,7 +15,7 @@ namespace Replate.Infrastructure.Persistence
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<VendorProfile> VendorProfiles { get; set; } = null!;
         public DbSet<VendorAddress> VendorAddresses { get; set; } = null!;
-        public DbSet<Deal> Deals { get; set; } = null!;
+        public DbSet<FoodListing> FoodListings { get; set; } = null!;
         public DbSet<DealItem> DealItems { get; set; } = null!;
         public DbSet<Reservation> Reservations { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)

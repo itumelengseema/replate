@@ -1,12 +1,10 @@
-﻿// DEPRECATED: Use Replate.Application.Features.FoodListings.DTOs.CreateFoodListingDto instead.
-
-using MediatR;
+﻿using MediatR;
 using Replate.Application.Common.Models;
 using Replate.Domain.Enums;
 
-namespace Replate.Application.Features.Deals.DTOs;
+namespace Replate.Application.Features.FoodListings.DTOs;
 
-public class CreateDealDto : IRequest<Result<DealDto>>
+public class CreateFoodListingDto : IRequest<Result<FoodListingDto>>
 {
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
@@ -18,5 +16,5 @@ public class CreateDealDto : IRequest<Result<DealDto>>
     public DateTime AvailableFrom { get; set; }
     public DateTime AvailableUntil { get; set; }
     public int VendorProfileId { get; set; }
-    public List<int> DealItemIds { get; set; } = new();
+    public List<int> FoodListingItemIds { get; set; } = new();
 }

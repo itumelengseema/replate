@@ -61,7 +61,7 @@ public class VendorProfileConfiguration : IEntityTypeConfiguration<VendorProfile
             .HasForeignKey<VendorProfile>(v => v.VendorAddressId)
             .OnDelete(DeleteBehavior.SetNull);
             
-        entity.HasMany(v => v.Deals)
+        entity.HasMany(v => v.FoodListings)
             .WithOne(d => d.VendorProfile)
             .HasForeignKey(d => d.VendorProfileId)
             .OnDelete(DeleteBehavior.Cascade);

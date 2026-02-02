@@ -10,7 +10,7 @@ public class UpdateDealDto
     public decimal? OriginalPrice { get; set; }
     public decimal? DiscountedPrice { get; set; }
     public int? AvailableQuantity { get; set; }
-    public DealType? DealType { get; set; }
+    public FoodListingType? FoodListingType { get; set; }
     public FoodCategory? Category { get; set; }
     public DateTime? AvailableFrom { get; set; }
     public DateTime? AvailableUntil { get; set; }

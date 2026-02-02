@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿﻿using AutoMapper;
 using MediatR;
 using Replate.Application.Common.Models;
 using Replate.Application.Features.Deals.DTOs;
@@ -20,9 +20,9 @@ public class GetAllDealsQueryHandler : IRequestHandler<GetAllDealsQuery, Result<
     }
     public async Task<Result<List<DealDto>>> Handle(GetAllDealsQuery request, CancellationToken cancellationToken)
     {
-        // get all deals List from database
-        var deals = await _db.Deals.ToListAsync(cancellationToken);
-        var result = _mapper.Map<List<DealDto>>(deals);
+        // get all food listings from database
+        var foodListings = await _db.FoodListings.ToListAsync(cancellationToken);
+        var result = _mapper.Map<List<DealDto>>(foodListings);
         return Result<List<DealDto>>.Success(result);
     }
 }

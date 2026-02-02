@@ -24,46 +24,45 @@ public class UpdateDealCommandHandler :
 
     public async Task<Result<DealDto>> Handle(UpdateDealCommand request, CancellationToken cancellationToken)
     {
-        // Find the deal by public ID
-        var deal = await _db.Deals
+        // Find the food listing by public ID
+        var foodListing = await _db.FoodListings
             .FirstOrDefaultAsync(d => d.PublicId == request.DealId, cancellationToken);
 
-        if (deal == null)
+        if (foodListing == null)
         {
             return Result<DealDto>.Failure("Deal not found");
         }
         
-        //Update the deal properties
+        //Update the food listing properties
         if (!string.IsNullOrWhiteSpace(request.UpdateDealDto.Title))
-            deal.Title = request.UpdateDealDto.Title;
+            foodListing.Title = request.UpdateDealDto.Title;
         if (!string.IsNullOrWhiteSpace(request.UpdateDealDto.Description))
-            deal.Description = request.UpdateDealDto.Description;
+            foodListing.Description = request.UpdateDealDto.Description;
         if (request.UpdateDealDto.OriginalPrice.HasValue)
-            deal.OriginalPrice = request.UpdateDealDto.OriginalPrice.Value;
+            foodListing.OriginalPrice = request.UpdateDealDto.OriginalPrice.Value;
         if (request.UpdateDealDto.DiscountedPrice.HasValue)
-            deal.DiscountedPrice = request.UpdateDealDto.DiscountedPrice.Value;
+            foodListing.DiscountedPrice = request.UpdateDealDto.DiscountedPrice.Value;
         if (request.UpdateDealDto.AvailableQuantity.HasValue)
-            deal.AvailableQuantity = request.UpdateDealDto.AvailableQuantity.Value;
-        if (request.UpdateDealDto.DealType.HasValue)
-            deal.DealType = request.UpdateDealDto.DealType.Value;
+            foodListing.AvailableQuantity = request.UpdateDealDto.AvailableQuantity.Value;
+        if (request.UpdateDealDto.FoodListingType.HasValue)
+            foodListing.FoodListingType = request.UpdateDealDto.FoodListingType.Value;
         if (request.UpdateDealDto.Category.HasValue)
-            deal.Category = request.UpdateDealDto.Category.Value;
+            foodListing.Category = request.UpdateDealDto.Category.Value;
         if (request.UpdateDealDto.AvailableFrom.HasValue)
-            deal.AvailableFrom = request.UpdateDealDto.AvailableFrom.Value;
+            foodListing.AvailableFrom = request.UpdateDealDto.AvailableFrom.Value;
         if (request.UpdateDealDto.AvailableUntil.HasValue)
-            deal.AvailableUntil = request.UpdateDealDto.AvailableUntil.Value;
+            foodListing.AvailableUntil = request.UpdateDealDto.AvailableUntil.Value;
         if (request.UpdateDealDto.VendorProfileId.HasValue)
-            deal.VendorProfileId = request.UpdateDealDto.VendorProfileId.Value;
+            foodListing.VendorProfileId = request.UpdateDealDto.VendorProfileId.Value;
        
         //Update the UpdatedAt timestamp
-        deal.UpdatedAt = DateTime.UtcNow;
+        foodListing.UpdatedAt = DateTime.UtcNow;
         
         // Save changes to the database
         await _db.SaveChangesAsync(cancellationToken);
         // Map to DTO and return success result
-        var dealDto = _mapper.Map<DealDto>(deal);
+        var dealDto = _mapper.Map<DealDto>(foodListing);
         return Result<DealDto>.Success(dealDto);
-            
     }
 
 

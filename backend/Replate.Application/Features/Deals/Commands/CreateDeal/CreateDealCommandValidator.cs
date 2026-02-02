@@ -52,9 +52,9 @@ public class CreateDealCommandValidator : AbstractValidator<CreateDealCommand>
             .IsInEnum()
             .WithMessage("Category must be a valid enum value.");
 
-        RuleFor(x => x.CreateDealDto.DealType)
+        RuleFor(x => x.CreateDealDto.FoodListingType)
             .IsInEnum()
-            .WithMessage("Deal Type must be a valid enum value.");
+            .WithMessage("Food Listing Type must be a valid enum value.");
     }
 
     private bool BeAValidDate(DateTime arg)

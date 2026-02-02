@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿// DEPRECATED: Use Replate.Application.Features.FoodListings.Commands.CreateFoodListingCommandHandler instead.
+
+using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Replate.Application.Common.Models;
@@ -27,14 +29,14 @@ public class CreateDealCommandHandler : IRequestHandler<CreateDealCommand, Resul
         {
             return Result<DealDto>.Failure("Vendor profile does not exist.");
         }
-        //map  the dto to the entity
-        var dealEntity = _mapper.Map<Deal>(request.CreateDealDto);
+        //map the dto to the entity
+        var foodListingEntity = _mapper.Map<FoodListing>(request.CreateDealDto);
         
         //add the entity to the db
-        _db.Deals.Add(dealEntity);
+        _db.FoodListings.Add(foodListingEntity);
         await _db.SaveChangesAsync(cancellationToken);
         
-        var dealDto = _mapper.Map<DealDto>(dealEntity);
+        var dealDto = _mapper.Map<DealDto>(foodListingEntity);
         
         return Result<DealDto>.Success(dealDto);
     }

@@ -6,17 +6,14 @@ using Replate.Domain.Entities;
 namespace Replate.Application.Features.Deals;
 
 /// <summary>
-/// AutoMapper profile for Deal feature mappings.
-/// TODO: Add mappings when DTOs are created.
+/// AutoMapper profile for Deal/FoodListing feature mappings.
 /// </summary>
 public class MappingProfile : Profile
 {
     public MappingProfile()
     { 
-        
-          CreateMap<Deal , DealDto>();
-          CreateMap<CreateDealDto, Deal>();
-          CreateMap<UpdateDealDto, Deal>();
-  
+        CreateMap<FoodListing, DealDto>();
+        CreateMap<CreateDealDto, FoodListing>();
+        CreateMap<UpdateDealDto, FoodListing>();
     }
 }

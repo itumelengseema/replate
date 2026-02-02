@@ -7,7 +7,5 @@ namespace Replate.Application.Features.Reservations.Commands.CreateReservation;
 public class CreateReservationCommand : IRequest<Result<ReservationDto>>
 {
     public int UserId { get; set; }
-    public CreateReservationDto CreateReservationDto { get; set; } = null!;
- 
+    public Guid FoodListingPublicId { get; set; }
 }
-

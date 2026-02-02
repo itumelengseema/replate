@@ -13,11 +13,11 @@ namespace Replate.Api.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-public class DealsController : ControllerBase
+public class FoodListingsController : ControllerBase
 {
     private readonly IMediator _mediator;
     
-    public DealsController(IMediator mediator)
+    public FoodListingsController(IMediator mediator)
     {
         _mediator = mediator;
     }

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Replate.Application.Common.Models;
@@ -18,11 +18,10 @@ public class GetDealByIdQueryHandler : IRequestHandler<GetDealByIdQuery, Result<
     }
     public async Task<Result<DealDto>> Handle(GetDealByIdQuery request, CancellationToken cancellationToken)
     {
-     var deal = await _db.Deals
+     var foodListing = await _db.FoodListings
          .FirstOrDefaultAsync(d=>d.PublicId == request.Id, cancellationToken);
      
-     var result = _mapper.Map<DealDto>(deal);
+     var result = _mapper.Map<DealDto>(foodListing);
      return Result<DealDto>.Success(result);
     }
 }
-

@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <Folder Include="Features\Reservations\Commands\UpdateReservation\" />
+    <Folder Include="Features\Reservations\Queries\GetCanceledReservations\" />
+    <Folder Include="Features\Reservations\Queries\GetPendingRerservations\" />
     <Folder Include="Features\Reservations\Queries\GetReservationsByDate\" />
     <Folder Include="Features\Reservations\Queries\GetReservationsById\" />
     <Folder Include="Features\Reservations\Queries\GetReservations\" />

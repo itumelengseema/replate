@@ -10,8 +10,8 @@
         public string Description { get; set; } = string.Empty;
 
 
-        // Foreign Key to Deal
-        public int DealId { get; set; }
-        public Deal Deal { get; set; } = null!;
+        // Foreign Key to FoodListing
+        public int FoodListingId { get; set; }
+        public FoodListing FoodListing { get; set; } = null!;
     }
 }

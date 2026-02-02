@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+﻿﻿using FluentValidation;
 
 namespace Replate.Application.Features.Deals.Commands.UpdateDeal;
 
@@ -43,11 +43,11 @@ public class UpdateDealCommandValidator: AbstractValidator<UpdateDealCommand>
                 .Must(dto => dto.DiscountedPrice <= dto.OriginalPrice)
                 .WithMessage("DiscountedPrice must be less than or equal to OriginalPrice.");
         });
-        // DealType: Only validate if provided
-        When(x => x.UpdateDealDto.DealType.HasValue, () => {
-            RuleFor(x => x.UpdateDealDto.DealType!.Value)
+        // FoodListingType: Only validate if provided
+        When(x => x.UpdateDealDto.FoodListingType.HasValue, () => {
+            RuleFor(x => x.UpdateDealDto.FoodListingType!.Value)
                 .IsInEnum()
-                .WithMessage("DealType is invalid.");
+                .WithMessage("FoodListingType is invalid.");
         });
         // Category: Only validate if provided
         When(x => x.UpdateDealDto.Category.HasValue, () => {

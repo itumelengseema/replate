@@ -1,4 +1,7 @@
-﻿namespace Replate.Domain.Entities
+﻿using System;
+using System.Collections.Generic;
+
+namespace Replate.Domain.Entities
 {
     public class VendorProfile
     {
@@ -23,7 +26,7 @@
         public VendorAddress?  VendorAddress { get; set; }
         
         // Navigation property
-        public ICollection<Deal> Deals { get; set; } = new List<Deal>();
+        public ICollection<FoodListing> FoodListings { get; set; } = new List<FoodListing>();
         
         // Audit fields
         public DateTime CreatedAt { get; set; } = DateTime. UtcNow;

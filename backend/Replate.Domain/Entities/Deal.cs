@@ -2,7 +2,7 @@
 
 namespace Replate.Domain.Entities
 {
-    public class Deal
+    public class FoodListing
     {
         public int Id { get; set; }
         public Guid PublicId { get; set; } = Guid.NewGuid();
@@ -15,7 +15,7 @@ namespace Replate.Domain.Entities
         public int AvailableQuantity { get; set; }
         
         //Deal Type & Category
-        public DealType DealType { get; set; }
+        public FoodListingType FoodListingType { get; set; }
         public FoodCategory Category { get; set; }
         
 

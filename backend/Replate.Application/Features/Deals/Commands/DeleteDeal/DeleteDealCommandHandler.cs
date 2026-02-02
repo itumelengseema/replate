@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Replate.Application.Common.Models;
@@ -20,24 +20,23 @@ public class DeleteDealCommandHandler : IRequestHandler<DeleteDealCommand, Resul
     }
     public async Task<Result<DealDto>> Handle(DeleteDealCommand request, CancellationToken cancellationToken)
     {
-        // Check if Deal Exists
+        // Check if Food Listing Exists
         
-        var dealExists = _db.Deals
+        var foodListingExists = _db.FoodListings
             .AnyAsync(d => d.PublicId == request.PublicId, cancellationToken);
 
-        if (!await dealExists)
+        if (!await foodListingExists)
         {
             return Result<DealDto>.Failure("Deal not found");
         }
         
-        // Delete Deal
-        var dealToDelete = await _db.Deals
+        // Delete Food Listing
+        var foodListingToDelete = await _db.FoodListings
             .FirstOrDefaultAsync(d => d.PublicId == request.PublicId, cancellationToken);
         
-        _db.Deals.Remove(dealToDelete!);
+        _db.FoodListings.Remove(foodListingToDelete!);
         await _db.SaveChangesAsync(cancellationToken);
-        var result = _mapper.Map<DealDto>(dealToDelete);
+        var result = _mapper.Map<DealDto>(foodListingToDelete);
         return Result<DealDto>.Success(result);
-     
     }
 }

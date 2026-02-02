@@ -17,9 +17,9 @@ namespace Replate.Domain.Entities
         public DateTime PickupTime { get; set; }
         public string? PickupInstructions { get; set; }
 
-        // Which deal is reserved
-        public int DealId { get; set; }
-        public Deal Deal { get; set; } = null!;
+        // Which food listing is reserved
+        public int FoodListingId { get; set; }
+        public FoodListing FoodListing { get; set; } = null!;
 
         // Which user reserved it
         public int UserId { get; set; }
