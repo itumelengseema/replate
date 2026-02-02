@@ -12,7 +12,14 @@ using System.IO;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        //Reject unknown fields 
+        options.JsonSerializerOptions.UnmappedMemberHandling = System.Text.Json.Serialization.JsonUnmappedMemberHandling.Disallow;
+
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    });
 
 // Add Application Layer services (MediatR, AutoMapper, Validators)
 builder.Services.AddApplication();
@@ -22,6 +29,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 // Add Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(s =>
 {
     s.SwaggerDoc("v1", new() 
@@ -60,6 +68,9 @@ using (var scope = app.Services.CreateScope())
         throw;
     }
 }
+
+// Global Exception Handling Middleware
+app.UseMiddleware<Replate.Api.Middleware.GlobalExceptionHandllingMiddleware>();
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())

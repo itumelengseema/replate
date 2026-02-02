@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Replate.Application.Common.Models;
 using Replate.Application.Features.Deals.DTOs;
 using Replate.Application.Interface;
@@ -19,6 +20,13 @@ public class CreateDealCommandHandler : IRequestHandler<CreateDealCommand, Resul
     }
     public async Task<Result<DealDto>> Handle(CreateDealCommand request, CancellationToken cancellationToken)
     {
+        var vendorExists = await _db.VendorProfiles
+            .AnyAsync(v => v.Id == request.CreateDealDto.VendorProfileId, cancellationToken);
+
+        if (!vendorExists)
+        {
+            return Result<DealDto>.Failure("Vendor profile does not exist.");
+        }
         //map  the dto to the entity
         var dealEntity = _mapper.Map<Deal>(request.CreateDealDto);
         
