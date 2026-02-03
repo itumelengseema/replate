@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.infrastructure\\persistence\\replatedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|solutionrelative:replate.infrastructure\\persistence\\replatedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.application\\features\\deals\\commands\\createdeal\\createdealcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|solutionrelative:replate.application\\features\\deals\\commands\\createdeal\\createdealcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|solutionrelative:replate.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.application\\features\\deals\\commands\\createdeal\\createdealcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|solutionrelative:replate.application\\features\\deals\\commands\\createdeal\\createdealcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.application\\features\\foodlistingitem\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|solutionrelative:replate.application\\features\\foodlistingitem\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.api\\middleware\\globalexceptionhandllingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|solutionrelative:replate.api\\middleware\\globalexceptionhandllingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.application\\features\\foodlistingitem\\commands\\createfoodlistingitem\\createfoodlistingitemcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|solutionrelative:replate.application\\features\\foodlistingitem\\commands\\createfoodlistingitem\\createfoodlistingitemcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.application\\features\\foodlistingitem\\commands\\createfoodlistingitem\\createfoodlistingitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|solutionrelative:replate.application\\features\\foodlistingitem\\commands\\createfoodlistingitem\\createfoodlistingitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{654A1B73-84D6-4925-A2D1-7C9B2F3CEF0E}|Replate.Infrastructure\\Replate.Infrastructure.csproj|solutionrelative:replate.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3E5B7DB5-F548-4463-ADAA-44EA9F4586B5}|Replate.Domain\\Replate.Domain.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.domain\\entities\\foodlistingitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E5B7DB5-F548-4463-ADAA-44EA9F4586B5}|Replate.Domain\\Replate.Domain.csproj|solutionrelative:replate.domain\\entities\\foodlistingitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3E5B7DB5-F548-4463-ADAA-44EA9F4586B5}|Replate.Domain\\Replate.Domain.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.domain\\entities\\foodlisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E5B7DB5-F548-4463-ADAA-44EA9F4586B5}|Replate.Domain\\Replate.Domain.csproj|solutionrelative:replate.domain\\entities\\foodlisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.application\\features\\orders\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B3C49FE-E476-429E-B2DC-C3CB52ED68C1}|Replate.Application\\Replate.Application.csproj|solutionrelative:replate.application\\features\\orders\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|c:\\users\\itumeleng.seema\\riderprojects\\replate\\backend\\replate.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98390736-46E0-449B-B324-74071E4DE4D7}|Replate.Api\\Replate.Api.csproj|solutionrelative:replate.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateDealCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommandHandler.cs",
+              "RelativeDocumentMoniker": "Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommandHandler.cs",
+              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommandHandler.cs",
+              "RelativeToolTip": "Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommandHandler.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwBsAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T08:30:06.108Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -57,124 +50,42 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReplateDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\ReplateDbContextFactory.cs",
-              "RelativeDocumentMoniker": "Replate.Infrastructure\\Persistence\\ReplateDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\Persistence\\ReplateDbContextFactory.cs",
-              "RelativeToolTip": "Replate.Infrastructure\\Persistence\\ReplateDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T12:14:29.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\FoodListingItem\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Replate.Application\\Features\\FoodListingItem\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\FoodListingItem\\MappingProfile.cs",
-              "RelativeToolTip": "Replate.Application\\Features\\FoodListingItem\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:30:50.332Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Replate.Api\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Replate.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-03T09:44:00.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateFoodListingItemCommand.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommand.cs",
-              "RelativeDocumentMoniker": "Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommand.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommand.cs",
-              "RelativeToolTip": "Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommand.cs",
+              "Title": "CreateDealCommand.cs",
+              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommand.cs",
+              "RelativeDocumentMoniker": "Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommand.cs",
+              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommand.cs",
+              "RelativeToolTip": "Replate.Application\\Features\\Deals\\Commands\\CreateDeal\\CreateDealCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:33:41.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "Replate.Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "Replate.Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:33:02.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FoodListingItem.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Domain\\Entities\\FoodListingItem.cs",
-              "RelativeDocumentMoniker": "Replate.Domain\\Entities\\FoodListingItem.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Domain\\Entities\\FoodListingItem.cs",
-              "RelativeToolTip": "Replate.Domain\\Entities\\FoodListingItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:32:29.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FoodListing.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Domain\\Entities\\FoodListing.cs",
-              "RelativeDocumentMoniker": "Replate.Domain\\Entities\\FoodListing.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Domain\\Entities\\FoodListing.cs",
-              "RelativeToolTip": "Replate.Domain\\Entities\\FoodListing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:32:26.997Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\Orders\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Replate.Application\\Features\\Orders\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\Orders\\MappingProfile.cs",
-              "RelativeToolTip": "Replate.Application\\Features\\Orders\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:32:02.061Z",
+              "WhenOpened": "2026-02-02T08:45:40.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CreateFoodListingItemCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommandHandler.cs",
-              "RelativeDocumentMoniker": "Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommandHandler.cs",
-              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommandHandler.cs",
-              "RelativeToolTip": "Replate.Application\\Features\\FoodListingItem\\Commands\\CreateFoodListingItem\\CreateFoodListingItemCommandHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Replate.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Api\\Program.cs",
+              "RelativeToolTip": "Replate.Api\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:30:45.45Z",
+              "WhenOpened": "2026-02-02T08:34:20.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GlobalExceptionHandllingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Api\\Middleware\\GlobalExceptionHandllingMiddleware.cs",
+              "RelativeDocumentMoniker": "Replate.Api\\Middleware\\GlobalExceptionHandllingMiddleware.cs",
+              "ToolTip": "C:\\Users\\itumeleng.seema\\RiderProjects\\replate\\backend\\Replate.Api\\Middleware\\GlobalExceptionHandllingMiddleware.cs",
+              "RelativeToolTip": "Replate.Api\\Middleware\\GlobalExceptionHandllingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T08:15:12.866Z",
               "EditorCaption": ""
             }
           ]
