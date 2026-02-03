@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Replate.Domain.Entities;
 
@@ -50,10 +50,10 @@ namespace Replate.Infrastructure.Persistence.Configurations
                 .HasDefaultValue(true);
             
             // Relationships
-            entity.HasMany(u => u.Reservations)
+            entity.HasMany(u => u.Orders)
                 .WithOne(r => r.User)
                 .HasForeignKey(r => r.UserId)
-                .OnDelete(DeleteBehavior. Cascade);
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

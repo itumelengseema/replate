@@ -22,6 +22,7 @@
                 // Log the exception (logging logic not shown here)
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 await context.Response.WriteAsync("An unexpected error occurred.");
+                _logger.LogError(ex, "An unexpected error occurred.");
             }
         }
     }

@@ -16,8 +16,9 @@ namespace Replate.Infrastructure.Persistence
         public DbSet<VendorProfile> VendorProfiles { get; set; } = null!;
         public DbSet<VendorAddress> VendorAddresses { get; set; } = null!;
         public DbSet<FoodListing> FoodListings { get; set; } = null!;
-        public DbSet<DealItem> DealItems { get; set; } = null!;
-        public DbSet<Reservation> Reservations { get; set; } = null!;
+      
+        public DbSet<FoodListingItem> FoodListingItems { get; set; } = null!;
+        public DbSet<Order> Orders { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

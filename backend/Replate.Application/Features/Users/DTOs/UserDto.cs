@@ -1,4 +1,4 @@
-﻿using Replate.Domain.Entities;
+﻿﻿using Replate.Domain.Entities;
 using Replate.Domain.Enums;
 
 namespace Replate.Application.Features.Users.DTOs;
@@ -9,8 +9,8 @@ public class UserDto
     public Guid PublicId { get; set; } = Guid.NewGuid();
         
     // User Information
-    public string FirebaseUid { get; set; }
-    public string Email { get; set; }
+    public required string FirebaseUid { get; set; }
+    public required string Email { get; set; }
     public string? DisplayName { get; set; }
     public string? PhotoUrl { get; set; }
         
@@ -19,7 +19,7 @@ public class UserDto
         
     // Relationships
     public VendorProfile? VendorProfile { get; set; }
-    public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+    public ICollection<Order>  Orders { get; set; } = new List<Order>();
         
     // Audit fields
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

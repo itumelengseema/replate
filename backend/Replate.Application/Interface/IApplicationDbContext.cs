@@ -11,7 +11,8 @@ public interface IApplicationDbContext
     DbSet<VendorProfile> VendorProfiles { get; set; }
     DbSet<VendorAddress> VendorAddresses { get; set; }
     DbSet<FoodListing> FoodListings { get; set; }
-    DbSet<Reservation> Reservations { get; set; }
+    DbSet<FoodListingItem> FoodListingItems { get; set; }
+    DbSet<Order> Orders { get; set; }
     
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) ;
     int SaveChanges();
