@@ -4,6 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <NoWarn>$(NoWarn);CS8618;CS8625;CS8601</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,12 +22,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Reservations\Commands\UpdateReservation\" />
-    <Folder Include="Features\Reservations\Queries\GetCanceledReservations\" />
-    <Folder Include="Features\Reservations\Queries\GetPendingRerservations\" />
-    <Folder Include="Features\Reservations\Queries\GetReservationsByDate\" />
-    <Folder Include="Features\Reservations\Queries\GetReservationsById\" />
-    <Folder Include="Features\Reservations\Queries\GetReservations\" />
+    <Folder Include="Features\FoodListingItem\Queries\" />
+    <Folder Include="Features\FoodListings\Queries\" />
+    <Folder Include="Features\Orders\Commands\UpdateReservation\" />
+    <Folder Include="Features\Orders\Queries\GetCanceledReservations\" />
+    <Folder Include="Features\Orders\Queries\GetPendingRerservations\" />
+    <Folder Include="Features\Orders\Queries\GetReservationsByDate\" />
+    <Folder Include="Features\Orders\Queries\GetReservationsById\" />
+    <Folder Include="Features\Orders\Queries\GetReservations\" />
     <Folder Include="Features\Users\Commands\" />
   </ItemGroup>
 

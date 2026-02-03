@@ -22,7 +22,7 @@ namespace Replate.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Replate.Domain.Entities.Deal", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.FoodListing", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,9 +45,6 @@ namespace Replate.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DealType")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
@@ -55,6 +52,9 @@ namespace Replate.Infrastructure.Migrations
                     b.Property<decimal>("DiscountedPrice")
                         .HasPrecision(10, 2)
                         .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("FoodListingType")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -86,10 +86,10 @@ namespace Replate.Infrastructure.Migrations
 
                     b.HasIndex("VendorProfileId");
 
-                    b.ToTable("Deals", (string)null);
+                    b.ToTable("FoodListings", (string)null);
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.DealItem", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.FoodListingItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,12 +97,12 @@ namespace Replate.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DealId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FoodListingId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -113,12 +113,12 @@ namespace Replate.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DealId");
+                    b.HasIndex("FoodListingId");
 
-                    b.ToTable("DealItems");
+                    b.ToTable("FoodListingItems");
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.Reservation", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -129,7 +129,7 @@ namespace Replate.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DealId")
+                    b.Property<int>("FoodListingId")
                         .HasColumnType("int");
 
                     b.Property<string>("PickupInstructions")
@@ -159,14 +159,14 @@ namespace Replate.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DealId");
+                    b.HasIndex("FoodListingId");
 
                     b.HasIndex("PublicId")
                         .IsUnique();
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reservations", (string)null);
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.User", b =>
@@ -364,10 +364,10 @@ namespace Replate.Infrastructure.Migrations
                     b.ToTable("VendorProfile", (string)null);
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.Deal", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.FoodListing", b =>
                 {
                     b.HasOne("Replate.Domain.Entities.VendorProfile", "VendorProfile")
-                        .WithMany("Deals")
+                        .WithMany("FoodListings")
                         .HasForeignKey("VendorProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -375,32 +375,32 @@ namespace Replate.Infrastructure.Migrations
                     b.Navigation("VendorProfile");
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.DealItem", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.FoodListingItem", b =>
                 {
-                    b.HasOne("Replate.Domain.Entities.Deal", "Deal")
-                        .WithMany("DealItems")
-                        .HasForeignKey("DealId")
+                    b.HasOne("Replate.Domain.Entities.FoodListing", "FoodListing")
+                        .WithMany("FoodListingItems")
+                        .HasForeignKey("FoodListingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Deal");
+                    b.Navigation("FoodListing");
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.Reservation", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.Order", b =>
                 {
-                    b.HasOne("Replate.Domain.Entities.Deal", "Deal")
-                        .WithMany("Reservations")
-                        .HasForeignKey("DealId")
+                    b.HasOne("Replate.Domain.Entities.FoodListing", "FoodListing")
+                        .WithMany("Orders")
+                        .HasForeignKey("FoodListingId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Replate.Domain.Entities.User", "User")
-                        .WithMany("Reservations")
+                        .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Deal");
+                    b.Navigation("FoodListing");
 
                     b.Navigation("User");
                 });
@@ -423,16 +423,16 @@ namespace Replate.Infrastructure.Migrations
                     b.Navigation("VendorAddress");
                 });
 
-            modelBuilder.Entity("Replate.Domain.Entities.Deal", b =>
+            modelBuilder.Entity("Replate.Domain.Entities.FoodListing", b =>
                 {
-                    b.Navigation("DealItems");
+                    b.Navigation("FoodListingItems");
 
-                    b.Navigation("Reservations");
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Replate.Domain.Entities.User", b =>
                 {
-                    b.Navigation("Reservations");
+                    b.Navigation("Orders");
 
                     b.Navigation("VendorProfile");
                 });
@@ -444,7 +444,7 @@ namespace Replate.Infrastructure.Migrations
 
             modelBuilder.Entity("Replate.Domain.Entities.VendorProfile", b =>
                 {
-                    b.Navigation("Deals");
+                    b.Navigation("FoodListings");
                 });
 #pragma warning restore 612, 618
         }

@@ -18,7 +18,7 @@ namespace Replate.Domain.Entities
         
         // Relationships
         public VendorProfile? VendorProfile { get; set; }
-        public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
         
         // Audit fields
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

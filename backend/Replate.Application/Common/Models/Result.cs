@@ -1,11 +1,11 @@
-﻿namespace Replate.Application.Common.Models;
+﻿﻿namespace Replate.Application.Common.Models;
 
 public class Result<T>
 {
     public bool IsSuccess { get; set; }
     public T? Data { get; set; }
     public string? ErrorMessage { get; set; }
-    public List<string> ValidationErrors  { get; set; }
+    public List<string> ValidationErrors { get; set; } = new List<string>();
     
     public static Result<T> Success(T data)
     {

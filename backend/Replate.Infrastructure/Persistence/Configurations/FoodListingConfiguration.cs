@@ -58,12 +58,12 @@ public class FoodListingConfiguration : IEntityTypeConfiguration<FoodListing>
             .HasDefaultValue(true);
 
         // Relationships
-        builder.HasMany(d => d.DealItems)
-            .WithOne(di => di.FoodListing)
-            .HasForeignKey(di => di.FoodListingId)
+        builder.HasMany(d => d.FoodListingItems)
+            .WithOne(fli => fli.FoodListing)
+            .HasForeignKey(fli => fli.FoodListingId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasMany(d => d.Reservations)
+        builder.HasMany(d => d.Orders)
             .WithOne(r => r.FoodListing)
             .HasForeignKey(r => r.FoodListingId)
             .OnDelete(DeleteBehavior.Restrict);
