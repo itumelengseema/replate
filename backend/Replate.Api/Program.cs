@@ -38,6 +38,9 @@ builder.Services.AddSwaggerGen(s =>
         Version = "v1", 
         Description = "API for Replate food deals platform" 
     });
+    
+    // Resolve conflicting schema IDs by using full type name
+    s.CustomSchemaIds(type => type.FullName?.Replace("+", "."));
 });
 
 var app = builder.Build();
@@ -79,7 +82,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(s =>
     {
         s.SwaggerEndpoint("/swagger/v1/swagger.json", "Replate API V1");
-        s.RoutePrefix = string.Empty; // Swagger at root: https://localhost:5001/
+        s.RoutePrefix = "swagger"; // Swagger at: /swagger
     });
 }
 
