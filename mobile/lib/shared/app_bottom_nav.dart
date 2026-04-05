@@ -28,7 +28,7 @@ class AppBottomNav extends StatelessWidget {
           body: IndexedStack(index: navViewModel.currentIndex, children: pages),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.grey[100],
             elevation: 0,
             currentIndex: navViewModel.currentIndex,
             onTap: navViewModel.selectTab,
@@ -48,14 +48,14 @@ class AppBottomNav extends StatelessWidget {
                 activeIcon: Icon(IconlyBold.discovery),
               ),
               BottomNavigationBarItem(
-                icon: Icon(IconlyLight.bag),
-                label: 'Orders',
-                activeIcon: Icon(IconlyBold.bag),
+                icon: Icon(IconlyLight.location),
+                label: 'Shops',
+                activeIcon: Icon(IconlyBold.location),
               ),
               BottomNavigationBarItem(
-                icon: Icon(IconlyBold.bag_2),
-                label: 'Shops',
-                activeIcon: Icon(IconlyBold.notification),
+                icon: Icon(IconlyLight.buy),
+                label: 'Orders',
+                activeIcon: Icon(IconlyBold.buy),
               ),
 
               BottomNavigationBarItem(

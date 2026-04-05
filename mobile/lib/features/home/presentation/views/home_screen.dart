@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:mobile/features/home/presentation/widgets/category_row.dart';
+import 'package:mobile/features/home/presentation/widgets/resturants_card.dart';
 import 'package:provider/provider.dart';
 
 import '../viewmodels/home_view_model.dart';
@@ -56,49 +58,59 @@ class HomeScreen extends StatelessWidget {
               // Search bar
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hint: const Text("Search for meals, restaurants..."),
-                      prefixIcon: const Icon(IconlyLight.search),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey[200],
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search for meals, restaurants...',
+                    prefixIcon: const Icon(IconlyLight.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
                     ),
+                    filled: true,
+                    fillColor: Colors.grey[200],
                   ),
                 ),
               ),
 
               // Categories
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10.0,
-                  vertical: 8.0,
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Categories",
+                      style: Theme.of(context).textTheme.headlineLarge
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+
+                    TextButton.icon(
+                      onPressed: () {},
+
+                      label: Text("See all"),
+                      style: TextButton.styleFrom(
+                        foregroundColor: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ],
                 ),
-                child: SizedBox(
-                  height: 40,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: List.generate(10, (index) {
-                      return Container(
-                        margin: const EdgeInsets.only(right: 8.0),
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(IconlyBold.star),
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
+              ),
+
+              // Placeholder for category cards
+              CategoryRow(categories: viewModel.categories),
+
+              // Restaurants Card section
+
+              // Restaurants Card section
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: viewModel.restaurants.map((restaurant) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: RestaurantCard(restaurant: restaurant),
+                    );
+                  }).toList(),
                 ),
               ),
             ],
