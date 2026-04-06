@@ -4,7 +4,7 @@ import 'package:mobile/core/theme/app_colors.dart';
 import 'package:mobile/features/home/presentation/views/home_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../features/explor/presentation/views/explor_screen.dart';
+import '../features/explore/presentation/views/explor_screen.dart';
 import '../features/favourite/views/favourite_screen.dart';
 import 'viewmodels/app_nav_view_model.dart';
 

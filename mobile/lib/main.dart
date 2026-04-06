@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'core/theme/app_theme.dart';
-import 'features/explor/presentation/viewmodels/explor_view_model.dart';
+import 'features/explore/presentation/viewmodels/explor_view_model.dart';
 import 'features/favourite/presentation/viewmodels/favourite_view_model.dart';
 import 'features/home/data/repositories/home_repository_impl.dart';
 import 'features/home/presentation/viewmodels/home_view_model.dart';

@@ -1,4 +1,4 @@
-import 'package:mobile/features/home/domain/entities/food_Item.dart';
+import 'package:mobile/features/home/domain/entities/food_item.dart';
 
 class Restaurants {
   final String restaurantsName;

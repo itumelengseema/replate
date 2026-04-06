@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-import '../../domain/entities/food_Item.dart';
 import '../../domain/entities/food_category.dart';
+import '../../domain/entities/food_item.dart';
 import '../../domain/entities/home_header.dart';
 import '../../domain/entities/restaurants.dart';
 import '../../domain/enums/item_type.dart';
